@@ -1,0 +1,27 @@
+name: layerplay
+description: Lightweight video player with a zero-export, timeline-linked audio layer.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # libmpv-based playback: streams from disk, hardware decoding, tiny demuxer cache.
+  media_kit: ^1.1.11
+  media_kit_video: ^1.2.5
+  # Bundles libmpv for all platforms. On Android-only builds you can swap this
+  # for media_kit_libs_android_video to shrink the APK.
+  media_kit_libs_video: ^1.0.5
+  file_picker: ^8.0.0
+  wakelock_plus: ^1.2.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
