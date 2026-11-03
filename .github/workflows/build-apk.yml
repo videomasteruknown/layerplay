@@ -25,6 +25,10 @@ jobs:
       - name: Create Android project
         run: flutter create --platforms=android --project-name layerplay --org com.layerplay .
 
+      # The generated template test expects a MyApp widget that this project does not use.
+      - name: Remove generated template test
+        run: rm -f test/widget_test.dart
+
       - name: Add storage and wake-lock permissions
         run: |
           python3 - << 'PY'
